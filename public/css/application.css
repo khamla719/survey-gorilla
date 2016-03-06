@@ -31,3 +31,9 @@
 .errors {
   color: #000000;
 }
+
+.howdy {
+  font-size: 1.75em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
