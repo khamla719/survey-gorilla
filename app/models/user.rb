@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :surveys
+  has_many :responses
+  has_many :answers, through: :responses
+
   validates :first_name, :last_name, :user_name, :email, :password_hash, presence: true
   validates :user_name, :email, uniqueness: true
 

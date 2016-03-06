@@ -9,4 +9,8 @@ $(document).ready(function() {
       window.location.reload()
     }
   });
+
+    $('#logIn').on('hidden.bs.modal', function () {
+    $(this).find("input,textarea,select").val('').end();
+  });
 });
