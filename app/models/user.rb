@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_many :surveys
   has_many :responses
   has_many :answers, through: :responses
+  has_many :questions, through: :answers
+  has_many :survey_takens, through: :questions, source: :survey
 
   validates :first_name, :last_name, :user_name, :email, :password_hash, presence: true
   validates :user_name, :email, uniqueness: true
@@ -32,3 +34,6 @@ class User < ActiveRecord::Base
   end
 
 end
+
+ # has_one :question, through: :answer
+ #  has_one :survey, through: :question
