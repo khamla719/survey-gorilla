@@ -14,7 +14,7 @@ end
 # end
 
 get '/surveys/:id' do
-  #show specific answer
+  @survey = Survey.find_by(id: params[:id])
   erb :'/surveys/show'
 end
 
