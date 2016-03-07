@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :user_name
       t.string :email
       t.string :password_hash
+      t.string :profile_picture
 
       t.timestamps(null: false)
     end

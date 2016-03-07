@@ -24,6 +24,18 @@ class User < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def total_surveys_taken
+    self.survey_takens.length
+  end
+
+  def total_surveys_created
+    Survey.where(creator_id: self.id).length
+  end
+
+  def surveys_created
+    Survey.where(creator_id: self.id)
+  end
 end
 
  # has_one :question, through: :answer

@@ -1,1 +1,52 @@
-<h1>Hello World!</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4
+     profile">
+      <div class="profile-header">
+        <img class="pull-left" src="<%= "#{@user.profile_picture}" %>" alt="<%= "#{@user.first_name}'s Profile Picture" %>">
+        <h1><%= @user.full_name %></h1>
+        <p><%= @user.user_name %></p>
+      </div>
+      <div class="profile-body">
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="pull-left">Surveys Created</p>
+            <h2><%= @user.total_surveys_created %></h2>
+          </div>
+          <div class="col-sm-6">
+            <p class="pull-left">Surveys Taken</p>
+            <h2 class="pull-left"><%= @user.total_surveys_taken %></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <% if @user.total_surveys_created != 0 %>
+        <h1 class="text-center created">Surveys Created</h1>
+        <div class="surveys">
+          <% @user.surveys_created.each do |survey| %>
+            <div class="surveys-body">
+              <h3><%= survey.title %></h3>
+              <form action="/surveys/<%= "#{survey.id}" %>" method="POST">
+                <div class="form-group">
+                  <input type="hidden" name="_method" value="put">
+                  <button type="submit" class="btn btn-default">Edit</button>
+                  <input type="hidden" name="_method" value="delete">
+                  <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+              </form>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      <% if @user.total_surveys_taken != 0 %>
+        <h1 class="text-center">Surveys Taken</h1>
+        <div class="surveys">
+          <% @user.survey_takens.each do |survey| %>
+            <h3 class="surveys-body"><%= survey.title %></h3>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

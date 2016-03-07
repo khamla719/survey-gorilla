@@ -23,11 +23,13 @@ get '/surveys/:id/edit' do
   erb :'surveys/edit'
 end
 
-# put '/surveys/:id' do
-#   #edits existing record
-# end
+put '/surveys/:id' do
+  #edits existing record
+end
 
-# delete '/surveys/:id' do
-#   #deletes existing record
-# end
+delete '/surveys/:id' do
+  survey = Survey.find(params[:id])
+  survey.destroy
+  redirect '/users'
+end
 
