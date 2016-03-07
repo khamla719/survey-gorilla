@@ -32,7 +32,7 @@ put '/users/:id' do
 end
 
 delete '/users/:id' do
-
+ 
 end
 
 post '/users/login' do

@@ -43,7 +43,7 @@
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  height: 300px;
+  height: 250px;
 }
 
 .profile-header {
@@ -80,6 +80,27 @@
 }
 
 .profile-body p {
-  margin-left: 30px;
-  margin-right: 50px;
+  margin-left: 20px;
+  font-size: 1.25em;
+}
+
+.profile-body h2 {
+  margin-top: 0;
+  margin-left: 20px;
+  color: #d9534f;
+}
+
+.surveys {
+  border: 1px solid gray;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.surveys-body {
+  padding-left: 15px;
+}
+
+.created {
+  margin-top: -5px;
 }
