@@ -32,6 +32,10 @@
   color: #000000;
 }
 
+
+.survey-list {
+  display: inline;}
+
 .howdy {
   font-size: 1.75em;
   margin-top: 5px;
@@ -103,4 +107,5 @@
 
 .created {
   margin-top: -5px;
+
 }

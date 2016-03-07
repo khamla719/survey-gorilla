@@ -1,3 +1,12 @@
+<ul class="list-group">
 <% @surveys.each do |survey| %>
-  <p><%= survey.title %></p>
+  <li class="list-group-item"><%= survey.title %><form action=<%="/surveys/#{survey.id}"%> method="get"><input class="btn btn-primary" type="submit" value="Take Survey"></form> </li>
 <%end%>
+
+<!-- <ul class="list-group">
+  <li class="list-group-item">Cras justo odio</li>
+  <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item">Morbi leo risus</li>
+  <li class="list-group-item">Porta ac consectetur ac</li>
+  <li class="list-group-item">Vestibulum at eros</li>
+</ul> -->

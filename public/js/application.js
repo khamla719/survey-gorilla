@@ -10,6 +10,7 @@ $(document).ready(function() {
     }
   });
 
+
     $('#logIn').on('hidden.bs.modal', function () {
     $(this).find("input,textarea,select").val('').end();
   });
