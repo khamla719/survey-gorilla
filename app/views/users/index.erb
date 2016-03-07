@@ -1,1 +1,16 @@
-<h1>Hello World!</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4
+     profile">
+      <div class="profile-header">
+        <img class="pull-left" src="<%= "#{@user.profile_picture}" %>" alt="<%= "#{@user.first_name}'s Profile Picture" %>">
+        <h1><%= @user.full_name %></h1>
+        <p><%= @user.user_name %></p>
+      </div>
+      <div class="profile-body">
+        <p class="pull-left">Surveys Created</p>
+        <p class="pull-left">Surveys Taken</p>
+      </div>
+    </div>
+  </div>
+</div>

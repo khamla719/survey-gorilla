@@ -22,4 +22,13 @@ class User < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def surveys_created
+    Survey.where(creator_id: self.id)
+  end
+
+  def surveys_taken
+    Response.questions.survey_id.where(user_id: self.id)
+  end
+
 end
