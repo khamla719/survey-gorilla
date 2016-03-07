@@ -42,12 +42,17 @@
   margin-bottom: 5px;
 }
 
+a.navbar-text.howdy:hover {
+  text-decoration: none;
+  color: #d9534f;
+}
+
 .profile {
   border: 1px solid gray;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  height: 250px;
+  height: 300px;
 }
 
 .profile-header {
@@ -84,13 +89,12 @@
 }
 
 .profile-body p {
-  margin-left: 20px;
   font-size: 1.25em;
 }
 
 .profile-body h2 {
   margin-top: 0;
-  margin-left: 20px;
+  margin-bottom: 25px;
   color: #d9534f;
 }
 
@@ -108,4 +112,13 @@
 .created {
   margin-top: -5px;
 
+}
+
+form .radio {
+  margin-left: 10px;
+}
+
+.take-survey {
+  margin-top: 15px;
+  margin-bottom: 50px;
 }

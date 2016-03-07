@@ -9,13 +9,15 @@
       </div>
       <div class="profile-body">
         <div class="row">
-          <div class="col-sm-6">
-            <p class="pull-left">Surveys Created</p>
-            <h2><%= @user.total_surveys_created %></h2>
+          <div class="col-sm-6 text-center">
+            <p>Surveys Created</p>
+            <h2 class="text-center"><%= @user.total_surveys_created %></h2>
+            <a href="/surveys/new" class="btn btn-danger">Create Surveys</a>
           </div>
-          <div class="col-sm-6">
-            <p class="pull-left">Surveys Taken</p>
-            <h2 class="pull-left"><%= @user.total_surveys_taken %></h2>
+          <div class="col-sm-6 text-center">
+            <p>Surveys Taken</p>
+            <h2><%= @user.total_surveys_taken %></h2>
+            <a href="/surveys" class="btn btn-danger">Take Surveys</a>
           </div>
         </div>
       </div>
@@ -42,7 +44,7 @@
       <% if @user.total_surveys_taken != 0 %>
         <h1 class="text-center">Surveys Taken</h1>
         <div class="surveys">
-          <% @user.survey_takens.each do |survey| %>
+          <% @user.survey_takens.distinct.each do |survey| %>
             <h3 class="surveys-body"><%= survey.title %></h3>
           <% end %>
         </div>

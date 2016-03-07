@@ -1,15 +1,20 @@
-<h3><%= @survey.title %></h3>
-
-<% @survey.questions.each do |question| %>
-  <h4> <%=question.content %> </h4>
-  <form action = "/" >
-    <% question.answers.each do |answer| %>
-      <input class = "single-checkbox" type="checkbox"   value = <% "#{answer.id}" %> > <%=answer.content%></br>
-    <%end%>
-  </form>
-<%end%>
-  <p>Things that I don't know</p>
-  <input type="text" class="form-control" aria-label="...">
-
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3><%= @survey.title %></h3>
+      <form action = "/responses" method="POST" >
+        <% @survey.questions.each do |question| %>
+          <h4> <%=question.content %> </h4>
+            <% question.answers.each do |answer| %>
+              <div class="radio">
+                <label>
+                  <input type="radio" name=<%= "#{question.id}" %> value = <%= "#{answer.id}" %>> <%=answer.content %>
+                </label>
+              </div>
+            <%end%>
+        <%end%>
+        <button type="submit" class="btn btn-danger take-survey">Submit!</button>
+      </form>
+    </div>
+  </div>
+</div>

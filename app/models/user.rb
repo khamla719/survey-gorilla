@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   end
 
   def total_surveys_taken
-    self.survey_takens.length
+    self.survey_takens.distinct.count
   end
 
   def total_surveys_created
