@@ -32,7 +32,7 @@
       </div>
       <% if session[:user_id] %>
         <div class="navbar-right">
-          <p class="navbar-text howdy"><%= "Howdy, #{session[:name]}" %></p>
+          <a href="/users" class="navbar-text howdy"><%= "Howdy, #{session[:name]}" %></a>
           <form id="sign-in" class="navbar-form navbar-right" action="/users/logout" method="POST">
             <button id="logOut" type="submit" class="btn btn-default">Sign out</button>
           </form>
