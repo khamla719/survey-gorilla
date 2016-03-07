@@ -1,5 +1,6 @@
 get '/surveys' do
   #shows all records
+  @surveys = Survey.all
   erb :'surveys/index'
 end
 
